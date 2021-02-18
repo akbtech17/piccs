@@ -14,7 +14,6 @@ class ImageCard extends React.Component {
   }
 
   componentDidMount() {
-    
     //   //to find the height of the current img
     // console.log(this.imageRef.current.clientHeight);
     // //but this will console height as 0 // because at that moment image have not been rendered
@@ -24,7 +23,7 @@ class ImageCard extends React.Component {
   setSpan = () => {
     const height = this.imageRef.current.clientHeight;
 
-    const spans = Math.ceil(height / 150);
+    const spans = Math.ceil(height / 10);
 
     this.setState({ spans });
     // console.log(this.state.spans);
@@ -32,7 +31,10 @@ class ImageCard extends React.Component {
   render() {
     const { description, urls } = this.props.image;
     return (
-      <div className="image-card" style={{ gridRowEnd: `span ${this.state.spans}` }}>
+      <div
+        className="image-card"
+        style={{ gridRowEnd: `span ${this.state.spans}` }}
+      >
         <img ref={this.imageRef} src={urls.regular} alt={description} />
       </div>
     );
