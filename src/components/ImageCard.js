@@ -13,7 +13,8 @@ class ImageCard extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.imageRef);
+      //to find the height of the current img 
+    console.log(this.imageRef.current.clientHeight);
   }
   render() {
     const { description, urls } = this.props.image;
